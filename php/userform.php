@@ -48,23 +48,23 @@
                 <h3 style="padding-left: 20px;">Form User</h3>
             </div>
             <hr/>
-            <form class="form-horizontal">
+            <form class="form-horizontal" action="User.php" method="POST">
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="userid">User ID:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="userid" placeholder="User ID ..." />
+                        <input type="text" class="form-control" id="userid" name="userid" placeholder="User ID ..." />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="namalengkap">Nama Lengkap:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="namalengkap" placeholder="Nama Lengkap ..." />
+                        <input type="text" class="form-control" id="namalengkap" name="namalengkap" placeholder="Nama Lengkap ..." />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="status">Status:</label>
                     <div class="col-sm-10">
-                        <select class="form-control" id="sel1">
+                        <select class="form-control" id="sel1" name="status">
                             <option value="1">Enable</option>
                             <option value="0">Disable</option>
                         </select>
@@ -73,7 +73,7 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="pwd">Password:</label>
                     <div class="col-sm-10"> 
-                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" />
+                        <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter password" />
                     </div>
                 </div>
                 <div class="form-group"> 

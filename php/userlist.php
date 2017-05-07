@@ -23,7 +23,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Master <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="./user_list.php">User</a></li>
+                                <li><a href="./userlist.php">User</a></li>
                                 <li><a href="#">Supplier</a></li>
                                 <li><a href="#">Barang</a></li>
                             </ul>
@@ -39,14 +39,14 @@
                             </ul>
                         </li>
                     </ul>
-                </div><!--/.nav-collapse -->
+                </div>
             </div>
         </nav>
 
         <div class="container" style="padding-top: 75px;">
             <div class="row">
                 <div class="col-xs-12 col-md-6">
-                    <button class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i>&nbsp;Tambah</button>
+                    <a href="./userform.php" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i>&nbsp;Tambah</a>
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <div class="form-group pull-right">
@@ -57,7 +57,18 @@
                     </div>
                 </div>
             </div>
-            <hr>
+            <?php
+                session_start();
+            
+                if(isset($_SESSION['rc'])) {
+                    if($_SESSION['rc'] == "sukses") {
+                        echo '<div class="alert alert-success alert-dismissable"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Data berhasil tersimpan.</div>';
+                    } else {
+                        echo '<div class="alert alert-danger alert-dismissable"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Data gagal tersimpan.</div>';
+                    }
+                }
+            ?>
+            <hr/>
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -67,12 +78,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>john@example.com</td>
-                        <td><a href="">Edit</a></td>
-                    </tr>
+                    <?php
+                    include ('./CUser.php');
+
+                    $c = new CUser();
+                    $query = $c->getData();
+
+                    while ($row = mysql_fetch_array($query)) {
+                        ?>
+                        <tr>
+                            <td><?= $row['user_id'] ?></td>
+                            <td><?= $row['nama_lengkap'] ?></td>
+                            <td><?= $row['status'] = '1' ? 'Enable' : 'Disable' ?></td>
+                            <td><a href="">Edit</a></td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
