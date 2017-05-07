@@ -8,8 +8,6 @@
 
     </head>
     <body>
-        <div>Web Pembelian</div>
-
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -26,7 +24,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Master <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">User</a></li>
+                                <li><a href="./user_list.php">User</a></li>
                                 <li><a href="#">Supplier</a></li>
                                 <li><a href="#">Barang</a></li>
                             </ul>
@@ -46,24 +44,16 @@
             </div>
         </nav>
 
-        <div class="container" style="padding-top: 60px;">
+        <div class="container" style="padding-top: 75px;">
 
-            <!-- Main component for a primary marketing message or call to action -->
             <div class="jumbotron">
                 <h1>Navbar example</h1>
-                <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-                <p>To see the difference between static and fixed top navbars, just scroll.</p>
-                <p>
-                    <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-                </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non mi justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus tincidunt porttitor justo eu maximus. Ut non vehicula augue. Curabitur quis quam interdum erat pulvinar venenatis quis id nibh. Sed semper erat eu nulla egestas consequat. Ut venenatis metus ac placerat rhoncus. Aenean non feugiat lorem.</p>
+                <p>Nunc malesuada, ante quis dignissim sagittis, nibh nunc euismod turpis, viverra accumsan risus ante vel dolor. In hac habitasse platea dictumst. Etiam pulvinar congue enim sed feugiat. Donec eget urna erat. Curabitur libero sapien, euismod nec nisi et, ultricies pretium turpis. Curabitur tincidunt pretium tortor ac congue. Fusce et odio quis sapien aliquam ullamcorper non et justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas facilisis blandit mi, eu dapibus velit sodales tincidunt. Etiam pulvinar, lacus id euismod aliquet, augue erat scelerisque nulla, non tempus felis tortor vel sapien. Mauris semper feugiat felis, quis vulputate est sollicitudin vitae.</p>
             </div>
 
-        </div> <!-- /container -->
+        </div>
 
-
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
 
