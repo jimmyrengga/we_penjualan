@@ -25,8 +25,8 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Master <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="./userlist.php">User</a></li>
-                                <li><a href="#">Supplier</a></li>
-                                <li><a href="#">Barang</a></li>
+                                <li><a href="./supplierlist.php">Supplier</a></li>
+                                <li><a href="./baranglist.php">Barang</a></li>
                             </ul>
                         </li>
                         <li><a href="#contact">Pembelian</a></li>

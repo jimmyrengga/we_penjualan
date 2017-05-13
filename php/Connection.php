@@ -12,7 +12,7 @@ class Connection {
         $server = 'localhost';
         $database = 'web_pembelian';
         $user = 'root';
-        $password = 'admin';
+        $password = '';
 
         $this->koneksi = mysql_connect($server, $user, $password) or die(mysql_error());
         if ($this->koneksi) {

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Web Pembelian > User List</title>
+        <title>Web Pembelian > Supplier List</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -24,7 +24,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Master <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="./userlist.php">User</a></li>
-                                <li><a href="#">Supplier</a></li>
+                                <li><a href="./supplierlist.php">Supplier</a></li>
                                 <li><a href="#">Barang</a></li>
                             </ul>
                         </li>
@@ -46,14 +46,14 @@
         <div class="container" style="padding-top: 75px;">
             <div class="row">
                 <div class="col-xs-12 col-md-6">
-                    <a href="./userform.php" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i>&nbsp;Tambah</a>
+                    <a href="./supplierform.php" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i>&nbsp;Tambah</a>
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <div class="form-group pull-right">
                         <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
                     <div class="form-group col-md-10 pull-right">
-                        <input type="text" class="form-control col-md-6" placeholder="Pencarian berdasarkan user id">
+                        <input type="text" class="form-control col-md-6" placeholder="Pencarian berdasarkan supplier id">
                     </div>
                 </div>
             </div>
@@ -73,24 +73,24 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>User ID</th>
-                        <th>Nama Lengkap</th>
-                        <th>Status</th>
+                        <th>Supplier ID</th>
+                        <th>Nama</th>
+                        <th>Alamat</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    include ('./CUser.php');
+                    include ('./CSupplier.php');
 
-                    $c = new CUser();
+                    $c = new CSupplier();
                     $query = $c->getData();
 
                     while ($row = mysql_fetch_array($query)) {
                         ?>
                         <tr>
-                            <td><?= $row['user_id'] ?></td>
-                            <td><?= $row['nama_lengkap'] ?></td>
-                            <td><?= $row['status'] = '1' ? 'Enable' : 'Disable' ?></td>
+                            <td><?= $row['supplier_id'] ?></td>
+                            <td><?= $row['nama'] ?></td>
+                            <td><?= $row['alamat'] ?></td>
                             <td><a href="">Edit</a></td>
                         </tr>
                     <?php } ?>
