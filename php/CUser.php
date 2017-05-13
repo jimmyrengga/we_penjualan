@@ -1,6 +1,6 @@
 <?php
 
-    require('./Connection.php');
+    require_once('./Connection.php');
     
     class CUser {
         private $c, $userid, $password, $namalengkap, $status, $insert;

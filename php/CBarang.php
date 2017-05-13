@@ -1,6 +1,6 @@
 <?php
 
-    require('./Connection.php');
+    require_once('./Connection.php');
     
     class CBarang {
         private $c, $kode, $nama, $insert;
@@ -23,8 +23,6 @@
         public function setNama($nama) {
             $this->nama = $nama;
         }
-
-        
 
         public function getData() {
             $sql = "SELECT * FROM barang";

@@ -1,6 +1,6 @@
 <?php
 
-    require('./Connection.php');
+    require_once('./Connection.php');
     
     class CSupplier {
         private $c, $supplier_id, $nama, $alamat, $insert;

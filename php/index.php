@@ -29,7 +29,7 @@
                                 <li><a href="./baranglist.php">Barang</a></li>
                             </ul>
                         </li>
-                        <li><a href="#contact">Pembelian</a></li>
+                        <li><a href="./pembelianform.php">Pembelian</a></li>
                         <li><a href="#contact">Laporan</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
