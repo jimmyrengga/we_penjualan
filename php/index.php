@@ -5,54 +5,42 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link href="css/bootstrap.min.css" rel="stylesheet">
-
+        <link href="css/signin.css" rel="stylesheet">
     </head>
     <body>
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Web<strong>Pembelian</strong></a>
+        <div class="container">
+            <?php
+            session_start();
+
+            if (isset($_SESSION['rc'])) {
+                if ($_SESSION['rc'] == "gagal") {
+                    echo '<div class="alert alert-danger alert-dismissable"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Username / Password salah.</div>';
+                } else {
+                    echo '<div class="alert alert-success alert-dismissable"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Berhasil logout.</div>';
+                }
+                unset($_SESSION['rc']);
+            }
+            ?>
+            <form class="form-signin" action="ceklogin.php" method="post">
+                <h3 class="form-signin-heading">Aplikasi<b>Pembelian</b></h3>
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="Username" name="username" required autofocus/>
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Master <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="./userlist.php">User</a></li>
-                                <li><a href="./supplierlist.php">Supplier</a></li>
-                                <li><a href="./baranglist.php">Barang</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="./pembelianform.php">Pembelian</a></li>
-                        <li><a href="#contact">Laporan</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Selamat Datang, Ari <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Log out</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div>
-        </nav>
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" placeholder="Password" name="password" required/>
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8">    
+                    </div><!-- /.col -->
+                    <div class="col-xs-4">
+                        <input type="submit" class="btn btn-primary btn-block" name="submit" value="Login"/>
+                    </div><!-- /.col -->
+                </div>
+            </form>
 
-        <div class="container" style="padding-top: 75px;">
-
-            <div class="jumbotron">
-                <h1>Navbar example</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non mi justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus tincidunt porttitor justo eu maximus. Ut non vehicula augue. Curabitur quis quam interdum erat pulvinar venenatis quis id nibh. Sed semper erat eu nulla egestas consequat. Ut venenatis metus ac placerat rhoncus. Aenean non feugiat lorem.</p>
-                <p>Nunc malesuada, ante quis dignissim sagittis, nibh nunc euismod turpis, viverra accumsan risus ante vel dolor. In hac habitasse platea dictumst. Etiam pulvinar congue enim sed feugiat. Donec eget urna erat. Curabitur libero sapien, euismod nec nisi et, ultricies pretium turpis. Curabitur tincidunt pretium tortor ac congue. Fusce et odio quis sapien aliquam ullamcorper non et justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas facilisis blandit mi, eu dapibus velit sodales tincidunt. Etiam pulvinar, lacus id euismod aliquet, augue erat scelerisque nulla, non tempus felis tortor vel sapien. Mauris semper feugiat felis, quis vulputate est sollicitudin vitae.</p>
-            </div>
-
-        </div>
+        </div> <!-- /container -->
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>

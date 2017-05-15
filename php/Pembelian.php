@@ -16,15 +16,15 @@
         $cpembelian->setTglpembelian($new_date);
     }
 
-    $cpembelian->setJumlahharga(0);
+    $jmlHarga = 0;
+    for ($i = 0; $i < sizeof($detail['kdbarang']); $i++) {
+        $jmlHarga += $detail['total'][$i];
+    }
     
+    $cpembelian->setJumlahharga($jmlHarga);
     $hasil = $cpembelian->insertData();
     
     for ($i = 0; $i < sizeof($detail['kdbarang']); $i++) {
-        
-        echo "<pre>";
-        print_r($detail);
-        echo "</pre>";
         
         $cpembelianDetail = new CPembelianDetail();
         $cpembelianDetail->setNopembelian($head['nopembelian']);
