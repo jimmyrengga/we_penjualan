@@ -1,33 +1,3 @@
-<?php
-  if (isset($_POST["tombol"]))
-	{
-		echo "<pre>";
-		//print_r($_POST);
-		echo "</pre>";
-		
-		$head = $_POST["head"];
-		$detail = $_POST["detail"];
-		echo "Head Looping Foreach <br/>";
-                echo $head['nopembelian'];
-		foreach ($head as $k => $v)
-		{
-			echo $k . " = " . $v . "<br/>";
-		}
-		
-		$items = array();
-		
-		for ($i = 0; $i < sizeof($detail['kdbarang']); $i++) {
-                array_push($items, array(
-                    "Kode Item" => $detail['kdbarang'][$i],
-                    "Quantity" => $detail['qty'][$i]
-                ));
-		}
-		echo "<pre>";
-		print_r($items);
-		echo "</pre>";
-	}
-?>
-
 <html>
     <head>
         <title>Web Pembelian > Trx Pembelian</title>
@@ -75,6 +45,20 @@
         </nav>
 
         <div class="container" style="padding-top: 75px;">
+            <?php
+                session_start();
+            
+                if(isset($_SESSION['rc'])) {
+                    if($_SESSION['rc'] == "sukses") {
+                        echo '<div class="alert alert-success alert-dismissable"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Data berhasil tersimpan.</div>';
+                    } else {
+                        echo '<div class="alert alert-danger alert-dismissable"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Data gagal tersimpan.</div>';
+                    }
+                    
+                    unset($_SESSION['rc']);
+                }
+            ?>
+            
             <div class="row">
                 <h3 style="padding-left: 20px;">Form Pembelian</h3>
             </div>
@@ -184,9 +168,15 @@
                                     var inp1 = new_row.cells[0].getElementsByTagName('select')[0];
                                     inp1.id += len;
                                     inp1.value = '';
+                                    var inp3 = new_row.cells[1].getElementsByTagName('input')[0];
+                                    inp3.id += len;
+                                    inp3.value = '';
                                     var inp2 = new_row.cells[2].getElementsByTagName('input')[0];
                                     inp2.id += len;
                                     inp2.value = '';
+                                    var inp4 = new_row.cells[3].getElementsByTagName('input')[0];
+                                    inp4.id += len;
+                                    inp4.value = '';
 
                                     var y = x.getElementsByTagName("tbody")[0];
 
