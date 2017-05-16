@@ -66,7 +66,7 @@
                     } else {
                         echo '<div class="alert alert-danger alert-dismissable"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Data gagal tersimpan.</div>';
                     }
-					unset($_SESSION['rc']);
+                    unset($_SESSION['rc']);
                 }
             ?>
             <hr/>
@@ -89,7 +89,7 @@
                         <tr>
                             <td><?= $row['kode'] ?></td>
                             <td><?= $row['nama'] ?></td>
-                            <td><a href="">Edit</a></td>
+                            <td><a href="./barangedit.php?kode=<?php echo $row['kode']; ?> ">Edit</a></td>
                         </tr>
                     <?php } ?>
                 </tbody>

@@ -50,6 +50,32 @@
             
             return $insert;
         }
+        
+        public function getSearch() {
+            $sql = "SELECT * FROM barang where kode='".$this->getKode()."';";
+            $c = new Connection();
+            $c->openConnection();
+            $query = mysql_query($sql) or die(mysql_error());
+            
+            $c->closeConnection();
+            
+            return $query;
+        }
+        
+        public function updateDate() {
+            $updated = false;
+            
+            $sql = "UPDATE barang set kode = '".$this->getKode()."', nama = '".$this->getNama()."' where kode = '".$this->getKode()."'";
+            $c = new Connection();
+            $c->openConnection();
+            $query = mysql_query($sql) or die(mysql_error());
+            if($query) {
+                $updated = true;
+            }
+            $c->closeConnection();
+            
+            return $updated;
+        }
 
     }
 
