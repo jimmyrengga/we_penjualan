@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 07, 2017 at 05:08 PM
+-- Generation Time: May 18, 2017 at 12:00 AM
 -- Server version: 5.6.16-1~exp1
--- PHP Version: 7.0.15-0ubuntu0.16.04.4
+-- PHP Version: 5.6.30-10+deb.sury.org~xenial+2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -86,6 +86,13 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `password`, `status`, `nama_lengkap`) VALUES
+('admin', 'admin', 1, 'Administrator');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -126,17 +133,17 @@ ALTER TABLE `user`
 --
 
 --
--- Constraints for table `barang`
---
-ALTER TABLE `barang`
-  ADD CONSTRAINT `barang_ibfk_1` FOREIGN KEY (`kode`) REFERENCES `trx_pembelian_detail` (`kode_barang`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
 -- Constraints for table `trx_pembelian`
 --
 ALTER TABLE `trx_pembelian`
-  ADD CONSTRAINT `trx_pembelian_ibfk_2` FOREIGN KEY (`no_pembelian`) REFERENCES `trx_pembelian_detail` (`no_pembelian`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `trx_pembelian_ibfk_1` FOREIGN KEY (`supplier_id`) REFERENCES `supplier` (`supplier_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `trx_pembelian_detail`
+--
+ALTER TABLE `trx_pembelian_detail`
+  ADD CONSTRAINT `trx_pembelian_detail_ibfk_2` FOREIGN KEY (`no_pembelian`) REFERENCES `trx_pembelian` (`no_pembelian`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `trx_pembelian_detail_ibfk_3` FOREIGN KEY (`kode_barang`) REFERENCES `barang` (`kode`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
