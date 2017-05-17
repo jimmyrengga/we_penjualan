@@ -29,7 +29,7 @@
                             </ul>
                         </li>
                         <li><a href="./pembelianform.php">Pembelian</a></li>
-                        <li><a href="#contact">Laporan</a></li>
+                        <li><a href="./laporanlist.php">Laporan</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
@@ -71,7 +71,7 @@
                             <td><?= $row['tgl_pembelian'] ?></td>
                             <td><?= $row['supplier_id'] ?></td>
                             <td><?= $row['jumlah_harga'] ?></td>
-                            <td><a href="">Detail</a></td>
+                            <td><a href="laporandetail.php?nopembelian=<?php echo $row['no_pembelian']; ?>">Detail</a></td>
                         </tr>
                     <?php } ?>
                 </tbody>

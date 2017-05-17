@@ -59,6 +59,32 @@
             
             return $insert;
         }
+		public function getSearch() {
+            $sql = "SELECT * FROM supplier where supplier_id='".$this->getSupplier_id()."';";
+            $c = new Connection();
+            $c->openConnection();
+            $query = mysql_query($sql) or die(mysql_error());
+            
+            $c->closeConnection();
+            
+            return $query;
+        }
+        
+        public function updateDate() {
+            $updated = false;
+            
+            $sql = "UPDATE supplier set nama = '".$this->getNama()."', alamat = '".$this->getAlamat()."' where supplier_id = '".$this->getSupplier_id()."'";
+			
+            $c = new Connection();
+            $c->openConnection();
+            $query = mysql_query($sql) or die(mysql_error());
+            if($query) {
+                $updated = true;
+            }
+            $c->closeConnection();
+            
+            return $updated;
+        }
 
     }
 

@@ -67,6 +67,32 @@
             
             return $insert;
         }
+public function getSearch() {
+            $sql = "SELECT * FROM user where user_id='".$this->getUserid()."';";
+            $c = new Connection();
+            $c->openConnection();
+            $query = mysql_query($sql) or die(mysql_error());
+            
+            $c->closeConnection();
+            
+            return $query;
+        }
+        
+        public function updateDate() {
+            $updated = false;
+            
+            $sql = "UPDATE user set password = '".$this->getPassword()."', status = '".$this->getStatus()."', nama_lengkap = '".$this->getNamalengkap()."' where user_id = '".$this->getUserid()."'";
+			
+            $c = new Connection();
+            $c->openConnection();
+            $query = mysql_query($sql) or die(mysql_error());
+            if($query) {
+                $updated = true;
+            }
+            $c->closeConnection();
+            
+            return $updated;
+        }
 
     }
 

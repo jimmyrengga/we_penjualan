@@ -30,7 +30,7 @@
                             </ul>
                         </li>
                         <li class="active"><a href="#contact">Pembelian</a></li>
-                        <li><a href="#contact">Laporan</a></li>
+                        <li><a href="./laporanlist.php">Laporan</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
@@ -100,7 +100,7 @@
                         <button class="btn btn-success" id="tambahDetail" type="submit" name="tombol">Simpan</button>
                     </div>
                     <div class="col-sm-6">
-                        <input type="button" class="btn btn-default pull-right" id="tambahDetail" onclick="insertRow()" value="Tambah"/>
+                        <input type="button" class="btn btn-default pull-right" id="tambahDetail" onClick="insertRow()" value="Tambah"/>
                     </div>
                 </div>
 
@@ -133,9 +133,9 @@
                                 </select>
                             </td>
                             <td><input type="number" class="form-control" id="qty" name="detail[qty][]"/></td>
-                            <td><input type="number" class="form-control" id="hrgsatuan" name="detail[hrgsatuan][]" onchange="hitungharga(this)"/></td>
+                            <td><input type="number" class="form-control" id="hrgsatuan" name="detail[hrgsatuan][]" onChange="hitungharga(this)"/></td>
                             <td><input type="number" class="form-control" id="total" name="detail[total][]" readonly="readonly"/></td>
-                            <td><input type="button" class="btn btn-default pull-right" id="delRow" value="Delete" onclick="deleteRow(this)"/></td>
+                            <td><input type="button" class="btn btn-default pull-right" id="delRow" value="Delete" onClick="deleteRow(this)"/></td>
                         </tr>
                     </tbody>
                 </table>

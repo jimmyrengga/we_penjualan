@@ -29,7 +29,7 @@
                             </ul>
                         </li>
                         <li><a href="./pembelianform.php">Pembelian</a></li>
-                        <li><a href="#contact">Laporan</a></li>
+                        <li><a href="./laporanlist.php">Laporan</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
@@ -52,19 +52,19 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="kode">Kode Barang:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="kode" name="kode" placeholder="Kode Barang..." />
+                        <input type="text" class="form-control" id="kode" name="kode" placeholder="Kode Barang..." required />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="nama">Nama Barang:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Barang..." />
+                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Barang..." required />
                     </div>
                 </div>
                 <div class="form-group"> 
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" class="btn btn-success">Submit</button>
-                        <button type="Cancel" class="btn btn-default">Cancel</button>
+                        <button type="reset" class="btn btn-default">Cancel</button>
                     </div>
                 </div>
             </form>

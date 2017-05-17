@@ -77,7 +77,7 @@
         }
         
         public function getSearch() {
-            $sql = "SELECT * FROM trx_pembelian_detail where no_pembelian=".$this->getNopembelian()."';";
+            $sql = "SELECT * FROM trx_pembelian_detail where no_pembelian='".$this->getNopembelian()."'";
             $c = new Connection();
             $c->openConnection();
             $query = mysql_query($sql) or die(mysql_error());

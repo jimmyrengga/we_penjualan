@@ -23,13 +23,13 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Master <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="./user_list.php">User</a></li>
-                                <li><a href="#">Supplier</a></li>
-                                <li><a href="#">Barang</a></li>
+                                <li><a href="./userlist.php">User</a></li>
+                                <li><a href="./supplierlist.php">Supplier</a></li>
+                                <li><a href="./baranglist.php">Barang</a></li>
                             </ul>
                         </li>
-                        <li><a href="#contact">Pembelian</a></li>
-                        <li><a href="#contact">Laporan</a></li>
+                        <li><a href="./pembelianform.php">Pembelian</a></li>
+                        <li><a href="./laporanlist.php">Laporan</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
@@ -52,13 +52,13 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="userid">User ID:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="userid" name="userid" placeholder="User ID ..." />
+                        <input type="text" class="form-control" id="userid" name="userid" placeholder="User ID ..." required />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="namalengkap">Nama Lengkap:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="namalengkap" name="namalengkap" placeholder="Nama Lengkap ..." />
+                        <input type="text" class="form-control" id="namalengkap" name="namalengkap" placeholder="Nama Lengkap ..." required />
                     </div>
                 </div>
                 <div class="form-group">
@@ -73,13 +73,13 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="pwd">Password:</label>
                     <div class="col-sm-10"> 
-                        <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter password" />
+                        <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter password" required />
                     </div>
                 </div>
                 <div class="form-group"> 
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" class="btn btn-success">Submit</button>
-                        <button type="Cancel" class="btn btn-default">Cancel</button>
+                        <button type="reset" class="btn btn-default">Cancel</button>
                     </div>
                 </div>
             </form>
