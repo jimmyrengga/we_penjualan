@@ -67,7 +67,8 @@
             
             return $insert;
         }
-public function getSearch() {
+        
+        public function getSearch() {
             $sql = "SELECT * FROM user where user_id='".$this->getUserid()."';";
             $c = new Connection();
             $c->openConnection();
@@ -78,7 +79,7 @@ public function getSearch() {
             return $query;
         }
         
-        public function updateDate() {
+        public function updateData() {
             $updated = false;
             
             $sql = "UPDATE user set password = '".$this->getPassword()."', status = '".$this->getStatus()."', nama_lengkap = '".$this->getNamalengkap()."' where user_id = '".$this->getUserid()."'";

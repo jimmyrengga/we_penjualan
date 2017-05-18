@@ -18,28 +18,38 @@
                     </button>
                     <a class="navbar-brand" href="#">Web<strong>Pembelian</strong></a>
                 </div>
+                <?php
+                    session_start();
+
+                    if (isset($_SESSION['user'])) {
+                        $userid = $_SESSION['user'];
+                    } else {
+                        header('Location: index.php');
+                    }
+                    
+                ?>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Master <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="./userlist.php">User</a></li>
-                                <li><a href="./supplierlist">Supplier</a></li>
-                                <li><a href="#">Barang</a></li>
-                            </ul>
+                                <li><a href="./supplierlist.php">Supplier</a></li>
+                                <li><a href="./baranglist.php">Barang</a></li>
+                            </ul>	
                         </li>
                         <li><a href="./pembelianform.php">Pembelian</a></li>
-                        <li><a href="#contact">Laporan</a></li>
+                        <li><a href="./laporanlist.php">Laporan</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Selamat Datang, Ari <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Selamat Datang, <?php echo $userid;?> <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Log out</a></li>
+                                <li><a href="./logout.php">Log out</a></li>
                             </ul>
                         </li>
                     </ul>
-                </div><!--/.nav-collapse -->
+                </div>
             </div>
         </nav>
 

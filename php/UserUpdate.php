@@ -4,16 +4,16 @@
     
     $user = $_POST['user'];
     $nama_lengkap = $_POST['nama'];
-	$status = $_POST['status'];
-	$password = $_POST['password'];
+    $status = $_POST['status'];
+    $password = $_POST['password'];
 
     $cuser = new CUser();
-    $cuser->getUserid($user);
-    $cuser->getPassword($password);
-	$cuser->getStatus($status);
-	$cuser->getNamalengkap($nama_lengkap);
+    $cuser->setUserid($user);
+    $cuser->setPassword($password);
+    $cuser->setStatus($status);
+    $cuser->setNamalengkap($nama_lengkap);
     
-    $hasil = $cuser->updateDate();
+    $hasil = $cuser->updateData();
     
     session_start();
     
