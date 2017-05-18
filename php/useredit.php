@@ -85,8 +85,8 @@
                     <label class="control-label col-sm-2" for="kode">Status:</label>
                     <div class="col-sm-10">
                         <select class="form-control" id="sel1" name="status">
-                            <option value="1">Enable</option>
-                            <option value="0">Disable</option>
+                            <option value="1" <?php if($data['status'] == '1') echo "selected"; ?>>Enable</option>
+                            <option value="0" <?php if($data['status'] == '0') echo "selected"; ?>>Disable</option>
                         </select>
                     </div>
                 </div>

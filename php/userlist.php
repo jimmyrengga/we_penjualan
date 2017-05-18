@@ -76,7 +76,7 @@
                     } else {
                         echo '<div class="alert alert-danger alert-dismissable"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Data gagal tersimpan.</div>';
                     }
-					unset($_SESSION['rc']);
+                    unset($_SESSION['rc']);
                 }
             ?>
             <hr/>
@@ -100,7 +100,7 @@
                         <tr>
                             <td><?= $row['user_id'] ?></td>
                             <td><?= $row['nama_lengkap'] ?></td>
-                            <td><?= $row['status'] = '1' ? 'Enable' : 'Disable' ?></td>
+                            <td><?= $row['status'] == '1' ? 'Enable' : 'Disable' ?></td>
                             <td><a href="./useredit.php?user_id=<?php echo $row['user_id']; ?>">Edit</a></td>
                         </tr>
                     <?php } ?>
